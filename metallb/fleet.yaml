@@ -1,0 +1,28 @@
+defaultNamespace: metallb-system
+targetCustomizations:
+  - name: install-metallb
+    helm:
+      repo: "https://metallb.github.io/metallb"
+      chart: metallb
+      version: "0.14.8"
+      releaseName: metallb
+    labels:
+      app: metallb
+    clusterSelector:
+      matchLabels:
+        beta.kubernetes.io/instance-type: rke2
+  - name: 
+    clusterName: infra-kube-intel
+    yaml:
+      overlays:
+      - kube-intel
+  - name: 
+    clusterName: my-gpu-cluster
+    yaml:
+      overlays:
+      - gaia
+  - name: 
+    clusterName: k3s-mini
+    yaml:
+      overlays:
+      - kube-intel
