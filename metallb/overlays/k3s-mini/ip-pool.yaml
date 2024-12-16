@@ -2,6 +2,10 @@ apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
   name: my-pool
+annotations:
+  app.kubernetes.io/managed-by: Helm
+  meta.helm.sh/release-name: kube-fleet-metallb
+  meta.helm.sh/release-namespace: metallb-system
 spec:
   addresses:
     - 10.77.4.160-10.77.4.179
