@@ -2,6 +2,10 @@ apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: l2adv
+annotations:
+  app.kubernetes.io/managed-by: Helm
+  meta.helm.sh/release-name: kube-fleet-metallb
+  meta.helm.sh/release-namespace: metallb-system
 spec:
   ipAddressPools:
     - my-pool
